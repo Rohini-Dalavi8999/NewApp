@@ -59,6 +59,15 @@
             otherValue3: 'https://origin1.dockers-site.com/GB/en_GB/'
         }];
     }]);
+    
+    function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 </script>
 
 <body>
@@ -69,15 +78,15 @@
             </center>
             <span ng-repeat="l in levis">
                <label for="Levis" style="font-family: initial;font-size: 25px;">Levis</label>&nbsp;
-                <input type="radio" ng-model="$parent.selectedObj" ng-value="l">
+                <input type="radio" ng-model="$parent.selectedObj" ng-value="l" onclick="myFunction()">
             </span>
             <span ng-repeat="d in dockers">
                 &nbsp; &nbsp;
                <label for="Dockers" style="font-family: initial;font-size: 25px;">Dockers</label>&nbsp;
-                <input type="radio" ng-model="$parent.selectedObj" ng-value="d">
+                <input type="radio" ng-model="$parent.selectedObj" ng-value="d" onclick="myFunction()">
             </span>
 
-            <div class="center" style="margin-top: 20px">
+            <div class="center" style="margin-top: 20px" id="myDIV">
             <div class="row">
                 <div class="col-xs-12 col-sm-12">
                     <input type="text" class="form-control" ng-model="main.searchInput" placeholder="Enter Text">
