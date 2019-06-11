@@ -71,7 +71,7 @@
     <div class="container" ng-app="MyApp" ng-controller="MyController" style=" background-color: lightblue; margin-top: 50px;">
         <div style="margin:70px;">
             <center>
-                <h1 style="font-family:initial;">Select a brand:</h1>
+                <h1 style="font-family: initial;">Select a brand:</h1>
             </center>
             <span ng-repeat="l in levis">
                 <h3 style="font-family: initial;"><label for="Levis">Levis</label></h3>
@@ -79,7 +79,7 @@
             </span>
             <span ng-repeat="d in dockers">
                 &nbsp; &nbsp;
-                <h3 style="font-family: initial;"></h3><label for="Dockers">Dockers</label></h3>
+                <h3 style="font-family: initial;"><label for="Dockers">Dockers</label></h3>
                 <input type="radio" ng-model="$parent.selectedObj" ng-value="d">
             </span>
 
