@@ -51,7 +51,7 @@
 <script>
     var m = angular.module("MyApp", []);
 
-    m.controller("MyController", ["$scope", function ($scope) {
+    m.controller("MyController", ["$scope", function ($scope ,$window) {
         $scope.selectedObj = {};
 
 
@@ -65,7 +65,20 @@
             otherValue2: 'https://origin1.dockers-site.com/CA/en_CA/',
             otherValue3: 'https://origin1.dockers-site.com/GB/en_GB/'
         }];
+
+         $scope.CheckPassport = function () {
+                if (typeof ($scope.$parent.selectedObj) != "undefined") {
+                    if ($scope.$parent.selectedObj) {
+                        $window.alert("RadioButton YES is checked.");
+                    } else {
+                        $window.alert("RadioButton NO is checked.");
+                    }
+                } else {
+                    $window.alert("RadioButtons are not checked.");
+                }
+            };
     }]);
+   
 </script>
 
 <body>
@@ -76,12 +89,12 @@
             </center>
             <span ng-repeat="l in levis">
                <label for="Levis" style="font-family: initial;font-size: 20px;">Levis</label>&nbsp;
-                <input type="radio" ng-model="$parent.selectedObj" ng-value="l">
+                <input type="radio" ng-model="$parent.selectedObj" ng-value="l" ng-click="CheckPassport()">
             </span>
             <span ng-repeat="d in dockers">
                 &nbsp; &nbsp;
                <label for="Dockers" style="font-family: initial;font-size: 20px;">Dockers</label>&nbsp;
-                <input type="radio" ng-model="$parent.selectedObj" ng-value="d">
+                <input type="radio" ng-model="$parent.selectedObj" ng-value="d" ng-click="CheckPassport()">
             </span>
 
             <div class="center" style="margin-top: 20px">
