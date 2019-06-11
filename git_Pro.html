@@ -79,12 +79,12 @@ function myFunction() {
             </center>
             <span ng-repeat="l in levis">
                <label for="Levis" style="font-family: initial;font-size: 25px;">Levis</label>&nbsp;
-                <input type="radio" ng-model="$parent.selectedObj" ng-value="l" onclick="myFunction()">
+                <input type="radio" ng-model="$parent.selectedObj" ng-value="l" onload="myFunction()">
             </span>
             <span ng-repeat="d in dockers">
                 &nbsp; &nbsp;
                <label for="Dockers" style="font-family: initial;font-size: 25px;">Dockers</label>&nbsp;
-                <input type="radio" ng-model="$parent.selectedObj" ng-value="d" onclick="myFunction()">
+                <input type="radio" ng-model="$parent.selectedObj" ng-value="d" onload="myFunction()">
             </span>
 
             <div class="center" style="margin-top: 20px" id="myDIV">
