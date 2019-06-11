@@ -1,10 +1,10 @@
 <html>
 
 <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <style>
-       body {
+        body {
             background-color: lightblue;
             text-align: center;
         }
@@ -19,12 +19,13 @@
 
         table {
             width: 50%;
-            height:0%;
+            height: 0%;
             text-align: left;
             border-collapse: collapse;
         }
-         .table{
-                margin-top: 25px;
+
+        .table {
+            margin-top: 25px;
         }
 
         td:hover {
@@ -43,12 +44,11 @@
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
-      
     </style>
 
 </head>
 <script>
-   var m = angular.module("MyApp", []);
+    var m = angular.module("MyApp", []);
 
     m.controller("MyController", ["$scope", function ($scope) {
         $scope.selectedObj = {};
@@ -68,59 +68,58 @@
 </script>
 
 <body>
-   <div ng-app="MyApp" ng-controller="MyController">
+    <div class="container" ng-app="MyApp" ng-controller="MyController">
         <div style="margin:10px;">
             <center>
                 <h3>Select a brand:</h3>
             </center>
             <span ng-repeat="l in levis">
-                <label for="Levis">Levis</label><input type="radio" ng-model="$parent.selectedObj" ng-value="l">
+                <label for="Levis">Levis</label>
+                <input type="radio" ng-model="$parent.selectedObj" ng-value="l">
             </span>
             <span ng-repeat="d in dockers">
                 &nbsp; &nbsp;
-                <label for="Dockers">Dockers</label> <input type="radio" ng-model="$parent.selectedObj" ng-value="d">
+                <label for="Dockers">Dockers</label>
+                <input type="radio" ng-model="$parent.selectedObj" ng-value="d">
             </span>
-            
-            
-                <div class="row">
-                        <div class="col-xs-9">
-            <input type="text" class="form-control" ng-model="main.searchInput" placeholder="Enter Text">
-        </div>
-        </div>
+
+
             <div class="row">
                 <div class="col-xs-9">
-                <table class="table" id="m">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a
-                                    href="{{selectedObj.otherValue1}}{{main.searchInput}}">{{selectedObj.otherValue1}}{{main.searchInput}}</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a
-                                    href="{{selectedObj.otherValue2}}{{main.searchInput}}">{{selectedObj.otherValue2}}{{main.searchInput}}</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a
-                                    href="{{selectedObj.otherValue2}}{{main.searchInput}}">{{selectedObj.otherValue3}}{{main.searchInput}}</a>
-                            </td>
-                        </tr>
-                    </tbody>
-
-                </table>
+                    <input type="text" class="form-control" ng-model="main.searchInput" placeholder="Enter Text">
+                </div>
             </div>
-            </div>
-       
+            <div class="row">
+                <div class="col-xs-9">
+                    <table class="table" id="m">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="{{selectedObj.otherValue1}}{{main.searchInput}}">{{selectedObj.otherValue1}}{{main.searchInput}}</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="{{selectedObj.otherValue2}}{{main.searchInput}}">{{selectedObj.otherValue2}}{{main.searchInput}}</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="{{selectedObj.otherValue2}}{{main.searchInput}}">{{selectedObj.otherValue3}}{{main.searchInput}}</a>
+                                </td>
+                            </tr>
+                        </tbody>
 
-    </div>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
 </body>
 
 </html>
