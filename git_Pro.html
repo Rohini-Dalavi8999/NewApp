@@ -74,12 +74,12 @@
                 <h1 style="font-family: initial;">Select a brand:</h1>
             </center>
             <span ng-repeat="l in levis">
-                <h3 style="font-family: initial;"><label for="Levis">Levis</label></h3>
+               <label for="Levis" style="font-family: initial;">Levis</label>
                 <input type="radio" ng-model="$parent.selectedObj" ng-value="l">
             </span>
             <span ng-repeat="d in dockers">
                 &nbsp; &nbsp;
-                <h3 style="font-family: initial;"><label for="Dockers">Dockers</label></h3>
+               <label for="Dockers" style="font-family: initial;">Dockers</label>
                 <input type="radio" ng-model="$parent.selectedObj" ng-value="d">
             </span>
 
