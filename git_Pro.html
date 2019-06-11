@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <style>
         body {
            
@@ -57,6 +58,12 @@
             otherValue3: 'https://origin1.dockers-site.com/GB/en_GB/'
         }];
     }]);
+
+    $('.Show').click(function() {
+    $('#show-table').show(500);
+    $('.Show').hide(0);
+    $('.Hide').show(0);
+});
 </script>
 
 <body>
@@ -67,7 +74,7 @@
             </center>
             <span ng-repeat="l in levis">
                <label for="Levis" style="font-family: initial;font-size: 25px;">Levis</label>&nbsp;
-                <input type="radio" ng-model="$parent.selectedObj" ng-value="l">
+                <input type="radio" ng-model="$parent.selectedObj" ng-value="l" class="show">
             </span>
             <span ng-repeat="d in dockers">
                 &nbsp; &nbsp;
@@ -75,7 +82,7 @@
                 <input type="radio" ng-model="$parent.selectedObj" ng-value="d">
             </span>
 
-            <div class="center" style="margin-top: 20px">
+            <div class="center" style="margin-top: 20px" id="show-table">
             <div class="row">
                 <div class="col-xs-12 col-sm-12">
                     <input type="text" class="form-control" ng-model="main.searchInput" placeholder="Enter Text">
